@@ -2,23 +2,23 @@ import BasicState from "./basic-state";
 import NormalMarioState from "./normal-mario-state";
 
 class DeadMarioState extends BasicState {
-  public getRevive(): void {
+  override getRevive(): void {
     this.mario.transTo(new NormalMarioState());
   }
 
-  public getMushroom(): void {
+  override getMushroom(): void {
     console.log("不能");
   }
 
-  public getFlower(): void {
+  override getFlower(): void {
     console.log("不能");
   }
 
-  public getHurt(): void {
+  override getHurt(): void {
     console.log("不能死了又死");
   }
 
-  public getStateName(): string {
+  override getStateName(): string {
     return "死掉的Mario";
   }
 }

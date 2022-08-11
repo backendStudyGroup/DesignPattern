@@ -11,7 +11,9 @@ class Mario {
 
   transTo(state: BasicState): void {
     console.log(`Mario: Trans to ${(<any>state).constructor.name}.`);
+    // 狀態切換
     this.state = state;
+    // 將切換後狀態的內容override蓋過
     this.state.setMario(this);
   }
 

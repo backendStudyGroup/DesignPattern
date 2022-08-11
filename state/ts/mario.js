@@ -8,7 +8,9 @@ var Mario = /** @class */ (function () {
     }
     Mario.prototype.transTo = function (state) {
         console.log("Mario: Trans to ".concat(state.constructor.name, "."));
+        // 狀態切換
         this.state = state;
+        // 將切換後狀態的內容override蓋過
         this.state.setMario(this);
     };
     Mario.prototype.getRevive = function () {

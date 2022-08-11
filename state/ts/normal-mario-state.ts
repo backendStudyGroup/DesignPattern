@@ -4,27 +4,27 @@ import FireMarioState from "./fire-mario-state";
 import SuperMarioState from "./super-mario-state";
 
 class NormalMarioState extends BasicState {
-  public getRevive(): void {
+  override getRevive(): void {
     console.log("還沒死，不能復活");
   }
 
-  public getMushroom(): void {
+  override getMushroom(): void {
     this.mario.setScore(this.mario.getScore() + 100);
     this.mario.transTo(new SuperMarioState());
   }
 
-  public getFlower(): void {
+  override getFlower(): void {
     this.mario.setScore(this.mario.getScore() + 200);
     this.mario.transTo(new FireMarioState());
   }
 
-  public getHurt(): void {
+  override getHurt(): void {
     this.mario.setScore(0);
     console.log("死了!");
     this.mario.transTo(new DeadMarioState());
   }
 
-  public getStateName(): string {
+  override getStateName(): string {
     return "一般Mario";
   }
 }
